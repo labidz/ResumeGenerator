@@ -1,9 +1,6 @@
 document.querySelector('#page').contentEditable = true;
 
-defaultTemplateVars = "fontMonospace";
-
-function insertList()
-{
+function insertList(){
 	node = getSelectionContainerElement();
 	var ul = document.createElement("ul");
 	ul.className = 'decimal';
@@ -12,10 +9,9 @@ function insertList()
 	insertAfter(node,ul);
 }
 
-function decreaseIndent()
-{
+function decreaseIndent(){
 	node = getSelectionContainerElement();
 	while(node.tagName!='UL')
 		node = node.parentNode;
 	node.style.paddingLeft = parseInt(window.getComputedStyle(node).getPropertyValue("padding-left"))-5;
-}
+}	
